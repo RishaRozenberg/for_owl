@@ -1,0 +1,71 @@
+@import './vars';
+@import './templates';
+
+// Отзывы---------------------------------------------------------------
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 3.5rem;
+
+    @media (max-width: $l) {
+        @include adaptive-font(28, 12);
+        margin-bottom: 2em;
+    }
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+
+    @media (max-width: $l) {
+        @include adaptive-font(28, 12);
+        margin-bottom: 1.1em;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.slide {
+    flex: 0 0 100%;
+    border: 0.2rem dotted $bg-main-colored;
+    border-radius: 10px;
+
+    &__text {
+        color: $text-dark;
+        font-size: 1.75rem;
+        font-weight: 500;
+        margin: 1.75rem;
+
+        @media (max-width: $l) {
+            @include adaptive-font(28, 12);
+            margin: 1em;
+        }
+    }
+}
+
+/* Показываем картинки прокрутки, если есть 3 и более слайда */
+.slider-container.slider-has-buttons .prev-button,
+.slider-container.slider-has-buttons .next-button {
+    display: inline-block;
+}
+
+.next-button,
+.prev-button {
+    display: none;
+    width: 3.85rem;
+    height: 3.85rem;
+
+    @media (max-width: $l) {
+        @include adaptive-font(28, 12);
+        width: 2.2em;
+        height: 2.2em;
+    }
+}
+
+// Отзывы---------------------------------------------------------------
